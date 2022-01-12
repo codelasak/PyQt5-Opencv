@@ -2,10 +2,7 @@
 
 
 ### To-Do list: 
-- [ ] Webcam and Capture image
-- [ ] Genrete Report as PDF 
-- [ ] Include and exclude object by user
-- [ ] Set limit to colony total number 
-- [ ] Zoom-in and Zoom-out
-- [ ] Light control
-- [ ] Send E-mail the report
+- [ ] Learn Basic OOP
+- [ ] Learn how to code a basic a window with label and button.
+- [ ] Learn how to use Qt Designer
+
