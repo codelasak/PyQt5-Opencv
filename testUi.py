@@ -14,24 +14,25 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(984, 605)
+        MainWindow.resize(893, 590)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.button1 = QtWidgets.QPushButton(self.centralwidget)
-        self.button1.setGeometry(QtCore.QRect(390, 380, 181, 71))
+        self.before = QtWidgets.QPushButton(self.centralwidget)
+        self.before.setGeometry(QtCore.QRect(620, 210, 181, 71))
+
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.button1.setFont(font)
-        self.button1.setAutoFillBackground(False)
-        self.button1.setStyleSheet("background-color: rgb(85, 85, 255);\n"
+        self.before.setFont(font)
+        self.before.setAutoFillBackground(False)
+        self.before.setStyleSheet("background-color: rgb(85, 85, 255);\n"
 "color: rgb(255,255, 255)")
-        self.button1.setDefault(False)
-        self.button1.setFlat(False)
-        self.button1.setObjectName("button1")
+        self.before.setDefault(False)
+        self.before.setFlat(False)
+        self.before.setObjectName("before")
         self.label1 = QtWidgets.QLabel(self.centralwidget)
-        self.label1.setGeometry(QtCore.QRect(370, 140, 221, 121))
+        self.label1.setGeometry(QtCore.QRect(590, 50, 261, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
@@ -40,9 +41,28 @@ class Ui_MainWindow(object):
         self.label1.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.label1.setAlignment(QtCore.Qt.AlignCenter)
         self.label1.setObjectName("label1")
+        self.after = QtWidgets.QPushButton(self.centralwidget)
+        self.after.setGeometry(QtCore.QRect(620, 350, 181, 71))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.after.setFont(font)
+        self.after.setAutoFillBackground(False)
+        self.after.setStyleSheet("background-color: rgb(85, 85, 255);\n"
+"color: rgb(255,255, 255)")
+        self.after.setDefault(False)
+        self.after.setFlat(False)
+        self.after.setObjectName("after")
+        self.photo = QtWidgets.QLabel(self.centralwidget)
+        self.photo.setGeometry(QtCore.QRect(20, 0, 521, 551))
+        self.photo.setText("")
+        self.photo.setPixmap(QtGui.QPixmap("img\Before.png"))
+        self.photo.setScaledContents(False)
+        self.photo.setObjectName("photo")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 984, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 893, 26))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -58,19 +78,32 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
 
+        self.after.clicked.connect(self.show_after)
+        self.before.clicked.connect(self.show_before)
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.button1.setText(_translate("MainWindow", "Start"))
-        self.label1.setText(_translate("MainWindow", "Codelasak"))
+        self.before.setText(_translate("MainWindow", "Before"))
+        self.label1.setText(_translate("MainWindow", "CyroDeep V0.1 Beta"))
+        self.after.setText(_translate("MainWindow", "After"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuAbout.setTitle(_translate("MainWindow", "About"))
         self.actionNew.setText(_translate("MainWindow", "New"))
+        self.actionNew.setStatusTip(_translate("MainWindow", "Create a new test"))
+        self.actionNew.setShortcut(_translate("MainWindow", "Ctrl+N"))
+    
+    def show_before(self):
+        self.photo.setPixmap(QtGui.QPixmap("img\Before.png"))
+
+    def show_after(self):
+        self.photo.setPixmap(QtGui.QPixmap("img/After.png"))
 
 
+    
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
