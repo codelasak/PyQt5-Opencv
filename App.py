@@ -109,7 +109,7 @@ class Ui_MainWindow(object):
 
     def show_popup(self):
         msg = QMessageBox()
-        msg.setWindowTitle("CytoDeep")
+        msg.setWindowTitle("CytoDeep Beta")
         msg.setText("Process completed")
 
         x = msg.exec_()
