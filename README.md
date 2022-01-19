@@ -9,6 +9,8 @@
 - [X] Learn how to add menu status and shortcuts. 
 - [X] Learn how to add photo. 
 - [X] Learn how to add popup via QMessageBox  . 
+- [X] Learn how to add popup via  Uğaddd  . 
+
     
 ### References:
 [Tech With Tim - Youtube Playlist](https://www.youtube.com/watch?v=Vde5SH8e1OQ&list=PLzMcBGfZo4-lB8MZfHPLTEHO9zJDDLpYj)
